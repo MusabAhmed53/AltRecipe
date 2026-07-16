@@ -1,0 +1,43 @@
+<div class="container">
+  <h1>Recipe Augmenter</h1>
+
+  <p class="subtitle">
+    Paste your recipe below and choose how you'd like to transform it.
+  </p>
+
+  <label for="recipe">Recipe</label>
+
+  <textarea
+    id="recipe"
+    [(ngModel)]="recipe"
+    placeholder="Paste your recipe here..."
+    rows="12">
+  </textarea>
+
+  <label for="diet">Convert Recipe To</label>
+
+  <select
+    id="diet"
+    [(ngModel)]="diet">
+
+    <option value="" disabled>
+      Select an option
+    </option>
+
+    @for (option of dietOptions; track option) {
+      <option [value]="option">
+        {{ option }}
+      </option>
+    }
+
+  </select>
+
+  <button
+    type="button"
+    (click)="onProceed()"
+    [disabled]="!recipe.trim() || !diet">
+
+    Proceed
+
+  </button>
+</div>
