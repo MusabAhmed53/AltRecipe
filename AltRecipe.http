@@ -1,0 +1,6 @@
+@AltRecipe_HostAddress = http://localhost:5147
+
+GET {{AltRecipe_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
